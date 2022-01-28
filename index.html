@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Salary Calculator</title>
+        <meta charset="utf-8">
+        <script src="jquery.js"></script>
+        <script src="client.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- Making the inputs for the user -->
+        <div id="userInputs">
+        <input id="firstNameInput" placeholder="First Name">
+        <input id="lastNameInput" placeholder="Last Name">
+        <input id="idInput" placeholder="ID">
+        <input id="titleInput" placeholder="Title">
+        <input id="annualSalaryInput" placeholder="Annual Salary">
+        </div>
+
+
+        <div>
+            <button id="submitButton">Submit</button>
+        </div>
+
+
+        <div id="employeeTable">
+        <table>
+            <thead>Employees
+                <tr>
+                    <!-- these are tables -->
+                    <!-- <th> is table heading -->
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Annual Salary</th>
+                </tr>
+                <tr>
+                    <!-- td defines a cell in the table - Table Data is a good way to think of it -->
+                    <td id="tdFirstName">First Name</td>
+                    <td id="tdLastName">Last Name</td>
+                    <td id="tdID">ID</td>
+                    <td id="tdTitle">Title</td>
+                    <td id="tdAnnualSalary">Annual Salary</td>
+                </tr>
+            </thead>
+        </table>
+
+        </div>  
+    </body>
+</html>
