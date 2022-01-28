@@ -13,7 +13,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
     </head>
+    <header>Salary Calculator</header>
     <body>
+        <p>Add Employee</p>
+
+
+
+
         <!-- Making the inputs for the user -->
         <div id="userInputs">
         <input id="firstNameInput" placeholder="First Name">
@@ -30,7 +36,7 @@
 
 
         <div id="employeeTable">
-        <table>
+        <table class="table">
             <thead>Employees
                 <tr>
                     <!-- these are tables -->
@@ -48,9 +54,15 @@
                     <td id="tdID">ID</td>
                     <td id="tdTitle">Title</td>
                     <td id="tdAnnualSalary">Annual Salary</td>
+                    <td id="delete"></td>
                 </tr>
+                <tfoot>
+                    <!-- supposed to be a table footer -->
+                </tfoot>
             </thead>
         </table>
+
+        <div>Total Monthly: $<span id="totalMonthly"></span></div>
 
         </div>  
     </body>
