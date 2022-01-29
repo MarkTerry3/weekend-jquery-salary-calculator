@@ -7,10 +7,14 @@ let employeesOut = [];
 function readyNow() {
     console.log('JQuery working');
     $('#submitButton').on('click', submitButton);
+    $('#tableOutput').on('click', deleteButton);
+    $('#submitButton').on('click', totalMonthly);
 }// end readyNow
 
+let monthlyEmployeeCosts = 0;
 
 function submitButton() {
+    //take in employee object
     let employeesIn = {
     firstName: $('#firstNameInput').val(),
     lastName: $('#lastNameInput').val(),
@@ -22,23 +26,60 @@ function submitButton() {
     //push employees to array
     employeesOut.push(employeesIn);
 
-    $('#tdFirstName').append (`<tr><td> ${employeesIn.firstName} </td></tr>`);
-    $('#tdLastName').append (`<tr><td> ${employeesIn.lastName} </td></tr>`);
-    $('#tdID').append (`<tr><td> ${employeesIn.id} </td></tr>`);
-    $('#tdTitle').append (`<tr><td> ${employeesIn.title} </td></tr>`);
-    $('#tdAnnualSalary').append (`<tr><td> ${employeesIn.annualSalary} </td></tr>`);
+    //append employees to the DOM  
+    $('#tableOutput').append(`<tr>
+    <td>${$('#firstNameInput').val()} </td>
+    <td>${$('#lastNameInput').val()} </td>
+    <td>${$('#idInput').val()} </td>
+    <td>${$('#titleInput').val()} </td>
+    <td>${$('#annualSalaryInput').val()} </td>
+    <td><button id="tdDelete">Delete</button></td></tr>`)
+
+
+    //empty input fields
+    $('#firstNameInput').val(''),
+    $('#lastNameInput').val(''),
+    $('#idInput').val(''),
+    $('#titleInput').val(''),
+    $('#annualSalaryInput').val('')
 
     
 
 }// end submitButton
 
-function monthlyCosts() {
-    //take in employee ANNUAL salary
-}//end monthlyCosts
 
-//store these in an object, then push them to an array
 
-//monthly total will require dividing. divide by 12 for 12 months
+function totalMonthly(){
+    let sumOfSalary = 0;
+    for (let i of employeesOut) {
+      sumOfSalary += Number(i.annualSalary);
+      //update DOM
+      $('#totalMonthly').text(Math.round(sumOfSalary/12));
+    }//end for loop
+    
+    
+  }//end sumOfSalary
+
+
+
+
+function deleteButton() {
+    console.log('this is', $(this));
+    // remove the block
+    $(this).remove();
+  
+    // update the count
+    console.log('this class is', $(this).attr('class'));
+    switch ($(this).attr('class')) {
+      case 'block red-block':
+        clickCounts.red--;
+        $('#red-count').text(clickCounts.red); // update the DOM - replace text value of element
+        break;
+        default:
+            break;
+    }
+}//end deleteButton
+
 
 
 // ## Topics Covered
@@ -47,9 +88,11 @@ function monthlyCosts() {
 
 // ## Assignment
 
-// - DONE The application should have an input form that collects _employee first name, last name, ID number, job title, annual salary_.
+// - ### DONE ### The application should have an input form that collects _employee first name, last name, ID number, job title, annual salary_.
 
-// A 'Submit' button should collect the form information, store the information to calculate monthly costs, append information to the DOM and clear the input fields. Using the stored information, calculate monthly costs and append this to the to DOM. If the total monthly cost exceeds $20,000, add a red background color to the total monthly cost.
+// - ### DONE ### A 'Submit' button should collect the form information, store the information to calculate monthly costs, append information to the DOM and clear the input fields. 
+
+// If the total monthly cost exceeds $20,000, add a red background color to the total monthly cost.
 
 // Create a delete button that removes an employee from the DOM. For Base mode, it does **not** need to remove that Employee's salary from the reported total.
 
