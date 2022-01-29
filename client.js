@@ -18,7 +18,11 @@ function readyNow() {
 
 
 function submitButton() {
-    $('#tdFirstName').text ($('#firstNameInput').val()); // isnt working need to revisit
+    $('#tdFirstName').text ($('#firstNameInput').val());
+    $('#tdLastName').text ($('#lastNameInput').val());
+    $('#tdID').text ($('#idInput').val());
+    $('#tdTitle').text ($('#titleInput').val());
+    $('#tdAnnualSalary').text ($('#annualSalaryInput').val());  
 }// end submitButton
 
 
