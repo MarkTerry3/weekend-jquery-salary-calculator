@@ -56,7 +56,9 @@ function totalMonthly(){
       //update DOM
       $('#totalMonthly').text(Math.round(sumOfSalary/12));
     }//end for loop
-    
+    if ((sumOfSalary/12) > 20000) {
+        $('#h3Red').css("background-color", "red");
+    }//end if
     
   }//end sumOfSalary
 
@@ -92,7 +94,7 @@ function deleteButton() {
 
 // - ### DONE ### A 'Submit' button should collect the form information, store the information to calculate monthly costs, append information to the DOM and clear the input fields. 
 
-// If the total monthly cost exceeds $20,000, add a red background color to the total monthly cost.
+// - ### DONE ### If the total monthly cost exceeds $20,000, add a red background color to the total monthly cost.
 
 // Create a delete button that removes an employee from the DOM. For Base mode, it does **not** need to remove that Employee's salary from the reported total.
 
