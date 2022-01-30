@@ -7,9 +7,17 @@ let employeesOut = [];
 function readyNow() {
     console.log('JQuery working');
     $('#submitButton').on('click', submitButton);
-    $('#tableOutput').on('click', deleteButton);
     $('#submitButton').on('click', totalMonthly);
+    //first parent, then child, because parent exists on page load
+    $('#tableOutput').on('click', '#employeeData', deleteButton);
 }// end readyNow
+
+function deleteButton() {
+    console.log('this is', $(this));
+    // remove the table row
+    $(this).remove();``
+}//end deleteButton
+
 
 let monthlyEmployeeCosts = 0;
 
@@ -27,7 +35,7 @@ function submitButton() {
     employeesOut.push(employeesIn);
 
     //append employees to the DOM  
-    $('#tableOutput').append(`<tr>
+    $('#tableOutput').append(`<tr id="employeeData">
     <td>${$('#firstNameInput').val()} </td>
     <td>${$('#lastNameInput').val()} </td>
     <td>${$('#idInput').val()} </td>
@@ -65,22 +73,6 @@ function totalMonthly(){
 
 
 
-function deleteButton() {
-    console.log('this is', $(this));
-    // remove the block
-    $(this).remove();
-  
-    // update the count
-    console.log('this class is', $(this).attr('class'));
-    switch ($(this).attr('class')) {
-      case 'block red-block':
-        clickCounts.red--;
-        $('#red-count').text(clickCounts.red); // update the DOM - replace text value of element
-        break;
-        default:
-            break;
-    }
-}//end deleteButton
 
 
 
