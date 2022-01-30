@@ -15,7 +15,7 @@ function readyNow() {
 function deleteButton() {
     console.log('this is', $(this));
     // remove the table row
-    $(this).remove();``
+    $(this).remove();
 }//end deleteButton
 
 
