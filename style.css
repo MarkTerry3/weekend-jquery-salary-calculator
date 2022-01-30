@@ -5,5 +5,24 @@ table, th, td {
   }
 
   * {
-      background-color: purple;
+      background-color: lightgray;
   }
+
+  #submitButton {
+      float: right;
+  }
+
+  .table {
+    text-align:center; 
+    margin-left:auto; 
+    margin-right:auto; 
+    width:600px;
+    /* background-color: grey; this turns the one box grey, idk why */
+  }
+
+header {
+    background-color: grey;
+    padding: 15px;
+}
+
+
